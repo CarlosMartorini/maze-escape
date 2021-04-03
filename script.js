@@ -49,11 +49,12 @@ const buildMaze = () => {
             } else if (line[j] === 'E') {
                 let addBlock = document.createElement('div');
                 addLine.appendChild(addBlock); 
+                addBlock.id = 'end';
                 addBlock.classList.add('end');
             } else if (line[j] === 'S') {
                 let addBlock = document.createElement('div');
                 addLine.appendChild(addBlock);
-                addBlock.id = 'player'; 
+                addBlock.id = 'start'; 
                 addBlock.classList.add('start');
             }
         }
@@ -63,6 +64,15 @@ const buildMaze = () => {
 buildMaze();
 
 //construir o player
+
+const buildPlayer = () => {
+    let getStart = document.getElementById('start');
+    let addPlayer = document.createElement('div');
+    getStart.appendChild(addPlayer);
+    addPlayer.classList.add('player');
+}
+
+buildPlayer();
 
 //construir condição de vitória
 
