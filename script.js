@@ -21,33 +21,39 @@ const getMapMaze = document.getElementById('maze');
 
 let line;
 let column;
-let startPositionLine = 9;
-let startPositionColumn = 0;
 
 //construir o labirinto
 
 const buildMaze = () => {
     for (let i = 0; i < maze.length; i++) {
+        
         line = maze[i];
+        let addLine = document.createElement('div');
+        getMapMaze.appendChild(addLine);
+        addLine.classList.add('line');
         console.log(line)
+        
         for (let j = 0; j < line.length; j++) {
+        
             column = line[j];
             console.log(column);
+            
             if (line[j] === 'W') {
                 let addBlock = document.createElement('div');
-                getMapMaze.appendChild(addBlock); 
+                addLine.appendChild(addBlock); 
                 addBlock.classList.add('wall');
             } else if (line[j] === ' ') {
                 let addBlock = document.createElement('div');
-                getMapMaze.appendChild(addBlock); 
+                addLine.appendChild(addBlock); 
                 addBlock.classList.add('floor');
             } else if (line[j] === 'E') {
                 let addBlock = document.createElement('div');
-                getMapMaze.appendChild(addBlock); 
+                addLine.appendChild(addBlock); 
                 addBlock.classList.add('end');
             } else if (line[j] === 'S') {
                 let addBlock = document.createElement('div');
-                getMapMaze.appendChild(addBlock); 
+                addLine.appendChild(addBlock);
+                addBlock.id = 'player'; 
                 addBlock.classList.add('start');
             }
         }
