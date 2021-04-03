@@ -1,0 +1,42 @@
+div {
+    display: inline-block;
+    margin: 0;
+}
+
+#maze{
+    display: grid;
+    grid-template-columns: repeat(21, 40px);
+    grid-template-rows: repeat(15, 40px);
+    height: 700px;
+    margin: 5px;
+}
+
+.wall {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+.floor {
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+}
+
+.end {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+}
+
+.start {
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+}
+
+.player {
+    
+}
+
+/********** PLAYER COM POSITION: ABSOLUTE *******/
