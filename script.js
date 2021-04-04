@@ -141,16 +141,16 @@ const movePlayer = (key) => {
 
     if (key === 'ArrowUp') {
         playerLine -= 1;
-        return row -= 20;
+        return row -= 40;
     } else if (key === 'ArrowDown') {
         playerLine += 1;
-        return row += 20;
+        return row += 40;
     } else if (key === 'ArrowLeft') {
         playerColumn -= 1;
-        return column -= 20;
+        return column -= 40;
     } else if (key === 'ArrowRight') {
         playerColumn += 1;
-        return column += 20;
+        return column += 40;
     }
 }
   
