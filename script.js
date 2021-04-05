@@ -67,8 +67,6 @@ const buildMaze = () => {
                 addStart.classList.add('start');
 
             }
-
-            console.log(position);
         }
     }
 }
@@ -113,7 +111,6 @@ const moveCondition = (key) => {
 
 const winCondition = () => {
     if (playerLine === 8 && playerColumn === 20) {
-        console.log('WIN!!!');
         let getContainer = document.getElementById('container');
         let addWinScreen = document.createElement('div');
         addWinScreen.innerText = 'Congratulations!!!\n You Escape';
@@ -125,10 +122,8 @@ const winCondition = () => {
 
 document.addEventListener('keydown', (event) => {
     const keyName = event.key;
-    console.log('keydown event\n\n' + 'key: ' + keyName);
     if (moveCondition(keyName) === true) {
         movePlayer(keyName);
-        console.log(playerLine, playerColumn);
         document.getElementById('player').style.transform = `translate(${column}px, ${row}px)`;
         winCondition();
     }
